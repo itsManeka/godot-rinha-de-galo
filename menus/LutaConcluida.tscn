@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://menus/LutaConcluida.gd" type="Script" id=1]
+[ext_resource path="res://assets/fontes/alterebro-pixel-font.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[node name="MenuIniciar" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0.533333, 0.478431, 0.368627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ganhos" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 115.0
+margin_right = 168.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 1 )
+text = "Ganhos (R$):"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GanhosValor" type="Label" parent="."]
+margin_left = 176.0
+margin_top = 115.0
+margin_right = 216.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.290196, 1, 0, 1 )
+text = "20.00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 312.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 2 )
+text = "Você venceu os campeões e agora é o Rei dos Galos!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarMenu" type="Button" parent="."]
+margin_left = 136.0
+margin_top = 144.0
+margin_right = 184.0
+margin_bottom = 164.0
+custom_fonts/font = SubResource( 3 )
+text = "Inicio"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="VoltarMenu" to="." method="_on_VoltarMenu_button_down"]

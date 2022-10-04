@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://menus/grids/GridVerticalGalos.tscn" type="PackedScene" id=1]
+[ext_resource path="res://menus/SelecionarGalo.gd" type="Script" id=2]
+[ext_resource path="res://assets/fontes/alterebro-pixel-font.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://menus/PainelGalo.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Aviario" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0.533333, 0.478431, 0.368627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridGalos" parent="." instance=ExtResource( 1 )]
+
+[node name="Voltar" type="Button" parent="."]
+margin_left = 211.0
+margin_top = 149.0
+margin_right = 248.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 1 )
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Batalhar" type="Button" parent="."]
+margin_left = 256.0
+margin_top = 149.0
+margin_right = 303.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 1 )
+text = "Batalhar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DinheiroLabel" type="Label" parent="."]
+margin_left = 96.0
+margin_top = 152.0
+margin_right = 131.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 1 )
+text = "Dinheiro (R$):"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dinheiro" type="Label" parent="."]
+margin_left = 152.0
+margin_top = 152.0
+margin_right = 200.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.301961, 0.835294, 0.14902, 1 )
+text = "R$ 100.00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PainelGalo" parent="." instance=ExtResource( 4 )]
+margin_top = 10.0
+margin_bottom = 138.0
+[connection signal="selecionou" from="GridGalos" to="." method="_on_GridGalos_selecionou"]
+[connection signal="button_down" from="Voltar" to="." method="_on_Voltar_button_down"]
+[connection signal="button_down" from="Batalhar" to="." method="_on_Batalhar_button_down"]

@@ -1,0 +1,140 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://dados/GaloManager.gd" type="Script" id=1]
+[ext_resource path="res://dados/Galo.gd" type="Script" id=2]
+[ext_resource path="res://assets/galos/galo_american_game.png" type="Texture" id=3]
+[ext_resource path="res://assets/galos/galo_plymouth_rock.png" type="Texture" id=4]
+[ext_resource path="res://assets/galos/galo_asyl.png" type="Texture" id=5]
+[ext_resource path="res://assets/galos/galo_shamo.png" type="Texture" id=6]
+[ext_resource path="res://assets/galos/galo_rhode_island_red.png" type="Texture" id=7]
+[ext_resource path="res://assets/galos/galo_brahma.png" type="Texture" id=8]
+[ext_resource path="res://assets/galos/galo_indio.png" type="Texture" id=9]
+[ext_resource path="res://assets/galos/hell_galo.png" type="Texture" id=10]
+[ext_resource path="res://assets/galos/e_galo.png" type="Texture" id=11]
+[ext_resource path="res://assets/galos/galo_sem_cabeca.png" type="Texture" id=12]
+[ext_resource path="res://assets/galos/galo_16bits.png" type="Texture" id=13]
+[ext_resource path="res://assets/galos/galo_3d.png" type="Texture" id=14]
+
+[node name="GaloManager" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RhodeIslandRed" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 7 )
+tamanho = 0.8
+forca = 90
+raca = "Rhode Island Red"
+descricao = "Embora geralmente dóceis, os galos Rhode Island Red podem ser bastante agressivos ou ariscos. A maioria dos galos também irá atacar estranhos (humanos ou animais) se sentir-se ameaçado ou não reconhecer o intruso."
+
+[node name="IndioGigante" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 9 )
+tamanho = 1.3
+velocidade_maxima = 70
+forca = 120
+resistencia = 35
+raca = "Índio Gigante"
+descricao = "Galo Índio Gigante, também conhecido como Índio Gigante, é uma raça de galináceos domésticos desenvolvida no Brasil. Dentro do gênero Gallus, este galináceo é o de maior tamanho e está entre os de maior peso que existem no mundo."
+
+[node name="Shamo" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 6 )
+tamanho = 1.1
+velocidade_maxima = 75
+forca = 130
+resistencia = 25
+raca = "Shamo"
+descricao = "Shamo ou Ko-Shamo é uma raça de galinha do Japão que se originou na Tailândia. São muito musculosos com plumagem pegajosa e curta, e olhar agressivo e cruel."
+
+[node name="Brahma" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 8 )
+tamanho = 0.9
+forca = 80
+resistencia = 25
+raca = "Brahma"
+descricao = "Brahma é uma raça de galinha asiática[1], que tem origem na região de Bramaputra na Índia. O tamanho e a força do Brahma, sugerem que a raça tem algum parentesco com a ave selvagem 'asiatic elusive'."
+
+[node name="Asil" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 5 )
+forca = 80
+resistencia = 25
+raca = "Asil"
+descricao = "Asil é uma raça de galinhas originária da Índia, descendente do malaio. É uma das raças capacitadas para formar galos de combate."
+
+[node name="PlymouthRock" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 4 )
+tamanho = 0.7
+velocidade_maxima = 85
+forca = 60
+resistencia = 10
+raca = "Plymouth Rock"
+descricao = "A Plymouth Rock é uma raça da galinha que originária dos Estados Unidos. A Plymouth Rock é uma ave de duplo propósito, resistente ao frio, sendo assim ideal para o pequeno proprietário de exploração avícola ou para o criador de quintal."
+
+[node name="AmericanGame" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 3 )
+tamanho = 0.8
+velocidade_maxima = 90
+resistencia = 25
+raca = "American Game"
+descricao = "The American Game é uma raça americana de aves de caça, galinhas criadas especificamente para brigas de galos."
+
+[node name="HellGalo" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 10 )
+tamanho = 1.6
+velocidade_maxima = 60
+forca = 150
+resistencia = 40
+raca = "HellGalo"
+descricao = "Nascido nas profundezas do Inferno, HellGalo é um enorme ser de aspecto diabólico, filho de um demônio com uma galinha.
+HellGalo possui uma manopla acoplada a sua mão, feita do que aparenta ser pedra sólida. Seu mais sinistro propósito é o de servir como chave para libertar o Ogdru Cocó, os Sete Galos do Caos."
+especial = true
+
+[node name="EGalo" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 11 )
+tamanho = 0.8
+forca = 120
+resistencia = 30
+raca = "e-Galo"
+descricao = "Os e-Galos são comumente conhecidos pelo seu visual chamativo, com cores fortes e escuras, seja nas roupas ou nos acessórios. Geralmente, essas aves possuem cabelos coloridos, muitas vezes pintados em duas cores ou mais, com degradês.
+Costuma-se lucrar muito com esse tipo de ave através do pack do galinho."
+especial = true
+
+[node name="GaloSemCabeca" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 12 )
+tamanho = 1.3
+forca = 130
+resistencia = 45
+raca = "Galo-sem-cabeça"
+descricao = "Assombração do folclore tipico das rinhas de galo. Um galo que perdeu injustamente a luta volta como um Galo-sem-cabeça.
+Extremente difícil de ser domado, normalmente um rinheiro fracassa diversas vezes até conseguir."
+especial = true
+
+[node name="Galo16Bits" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 13 )
+tamanho = 0.8
+velocidade_maxima = 64
+forca = 96
+resistencia = 32
+raca = "Galo 16 Bits"
+descricao = "Um bug em uma ROM do NES transportou esse galo de maneira improvável para esse jogo. Não se sabe muito sobre ele."
+especial = true
+
+[node name="Galo3D" type="Node2D" parent="."]
+script = ExtResource( 2 )
+sprite = ExtResource( 14 )
+velocidade_maxima = 85
+forca = 160
+resistencia = 45
+raca = "Galo 3D"
+descricao = "Um galo digno dos grandes modeladores 3D.
+Extremamente forte por ultrapassar as dimensões desse jogo.
+Não se sabe muita informação sobre esse galo."
+especial = true

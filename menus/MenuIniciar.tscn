@@ -1,0 +1,315 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://menus/MenuIniciar.gd" type="Script" id=1]
+[ext_resource path="res://assets/botao_granja.png" type="Texture" id=2]
+[ext_resource path="res://assets/botao_vs.png" type="Texture" id=3]
+[ext_resource path="res://assets/botao_campeonato.png" type="Texture" id=4]
+[ext_resource path="res://assets/botao_comprar.png" type="Texture" id=5]
+[ext_resource path="res://assets/fontes/alterebro-pixel-font.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="DynamicFont" id=4]
+size = 13
+outline_color = Color( 0.686275, 0.67451, 0.290196, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.419608, 0.345098, 0.0941176, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+draw_center = false
+
+[sub_resource type="DynamicFont" id=8]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[node name="MenuIniciar" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0.533333, 0.478431, 0.368627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 16.0
+margin_top = 49.0
+margin_right = 304.0
+margin_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/hseparation = 10
+columns = 4
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Aviario" type="TextureButton" parent="GridContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 2 )
+
+[node name="Comprar" type="TextureButton" parent="GridContainer"]
+margin_left = 74.0
+margin_right = 138.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 5 )
+
+[node name="Rinha" type="TextureButton" parent="GridContainer"]
+margin_left = 148.0
+margin_right = 212.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 3 )
+
+[node name="Mestre" type="TextureButton" parent="GridContainer"]
+margin_left = 222.0
+margin_right = 286.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 4 )
+
+[node name="Aviario_" type="Label" parent="GridContainer"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 1 )
+text = "Aviário"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Comprar_" type="Label" parent="GridContainer"]
+margin_left = 74.0
+margin_top = 68.0
+margin_right = 138.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 1 )
+text = "Loja"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rinha_" type="Label" parent="GridContainer"]
+margin_left = 148.0
+margin_top = 68.0
+margin_right = 212.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 1 )
+text = "Rinha"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mestre_" type="Label" parent="GridContainer"]
+margin_left = 222.0
+margin_top = 68.0
+margin_right = 286.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 1 )
+text = "Rei dos galos"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo" type="Label" parent="."]
+margin_left = 56.0
+margin_top = -8.0
+margin_right = 265.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 2 )
+text = "Rinha de Galo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelDinheiro" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 164.0
+margin_right = 64.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 1 )
+text = "Dinheiro (R$):"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Descricao" type="Label" parent="."]
+margin_left = 17.0
+margin_top = 131.0
+margin_right = 303.0
+margin_bottom = 160.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dinheiro" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 164.0
+margin_right = 96.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.466667, 0.952941, 0.223529, 1 )
+text = "0.00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="By" type="Label" parent="."]
+margin_left = 216.0
+margin_top = 35.0
+margin_right = 266.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 1 )
+text = "by @itsManeka"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sobre" type="Button" parent="."]
+margin_left = 292.0
+margin_top = 8.0
+margin_right = 310.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 5 )
+text = "?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Infos" type="Panel" parent="."]
+visible = false
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 312.0
+margin_bottom = 168.0
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fechar" type="Button" parent="Infos"]
+margin_left = 275.0
+margin_top = 8.0
+margin_right = 295.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Obrigado" type="Label" parent="Infos"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 200.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Obrigado por jogar!"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Infos"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 296.0
+margin_bottom = 152.0
+custom_styles/normal = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "Esse jogo foi desenvolvido para a [url=\"https://itch.io/jam/1jam-secreto\"]#1JAM Secreto[/url] da [url=\"https://twitter.com/jamtasticgd\"]Jamtastic[/url].
+Trata-se de um \"Amigo secreto\" com jogos, onde alguém iria descrever uma ideia de jogo e a pessoa sorteada iria desenvolve-la.
+
+Essa foi a ideia que tirei:
+
+\"Gostaria de ver algo bem humorado para aliviar o estresse sofrido esse ano.\"
+por [url=\"https://etrealjunior.itch.io/\"]Laerte Junior[/url]
+
+Bom, não sou muito bom com humor, mas espero que curtam a ideia.
+Eu botei em pratica a ideia que um colega sempre sugeria no twitter (Com consentimento do mesmo). Vocês lutarão contra ele na modalidade Rei Dos Galos, ele é o ViniBoy!
+
+Divirtam-se, e muito obrigado por jogar!
+Atenciosamente, [url=\"https://campsite.bio/emanuel.ozorio\"]itsManeka[/url]"
+text = "Esse jogo foi desenvolvido para a #1JAM Secreto da Jamtastic.
+Trata-se de um \"Amigo secreto\" com jogos, onde alguém iria descrever uma ideia de jogo e a pessoa sorteada iria desenvolve-la.
+
+Essa foi a ideia que tirei:
+
+\"Gostaria de ver algo bem humorado para aliviar o estresse sofrido esse ano.\"
+por Laerte Junior
+
+Bom, não sou muito bom com humor, mas espero que curtam a ideia.
+Eu botei em pratica a ideia que um colega sempre sugeria no twitter (Com consentimento do mesmo). Vocês lutarão contra ele na modalidade Rei Dos Galos, ele é o ViniBoy!
+
+Divirtam-se, e muito obrigado por jogar!
+Atenciosamente, itsManeka"
+[connection signal="button_down" from="GridContainer/Aviario" to="." method="_on_Aviario_button_down"]
+[connection signal="mouse_entered" from="GridContainer/Aviario" to="." method="_on_Aviario_mouse_entered"]
+[connection signal="button_down" from="GridContainer/Comprar" to="." method="_on_Comprar_button_down"]
+[connection signal="mouse_entered" from="GridContainer/Comprar" to="." method="_on_Comprar_mouse_entered"]
+[connection signal="button_down" from="GridContainer/Rinha" to="." method="_on_Rinha_button_down"]
+[connection signal="mouse_entered" from="GridContainer/Rinha" to="." method="_on_Rinha_mouse_entered"]
+[connection signal="button_down" from="GridContainer/Mestre" to="." method="_on_Mestre_button_down"]
+[connection signal="mouse_entered" from="GridContainer/Mestre" to="." method="_on_Mestre_mouse_entered"]
+[connection signal="button_down" from="Sobre" to="." method="_on_Sobre_button_down"]
+[connection signal="button_down" from="Infos/Fechar" to="." method="_on_Fechar_button_down"]
+[connection signal="meta_clicked" from="Infos/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]

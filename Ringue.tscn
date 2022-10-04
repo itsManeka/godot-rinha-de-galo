@@ -1,0 +1,197 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://inimigo/Inimigo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://jogador/Jogador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ringue.gd" type="Script" id=3]
+[ext_resource path="res://assets/ring.png" type="Texture" id=4]
+[ext_resource path="res://assets/chao.png" type="Texture" id=5]
+[ext_resource path="res://assets/character.png" type="Texture" id=6]
+[ext_resource path="res://assets/fontes/alterebro-pixel-font.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://menus/Apostas.tscn" type="PackedScene" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 64.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="Ringue" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Chao" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 180 )
+
+[node name="Pessoas" type="Node2D" parent="."]
+
+[node name="Pessoa0" type="Sprite" parent="Pessoas"]
+position = Vector2( 72, 152 )
+rotation = 4.33016
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+frame = 1
+
+[node name="Pessoa1" type="Sprite" parent="Pessoas"]
+position = Vector2( 40, 32 )
+rotation = -1.06116
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+
+[node name="Pessoa2" type="Sprite" parent="Pessoas"]
+position = Vector2( 96, 0 )
+rotation = -0.164061
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+frame = 2
+
+[node name="Pessoa3" type="Sprite" parent="Pessoas"]
+position = Vector2( 16, 136 )
+rotation = 4.41568
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+frame = 1
+
+[node name="Pessoa4" type="Sprite" parent="Pessoas"]
+position = Vector2( 304, 180 )
+rotation = 1.95826
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+
+[node name="Pessoa5" type="Sprite" parent="Pessoas"]
+position = Vector2( 296, 32 )
+rotation = 0.97913
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+frame = 2
+
+[node name="Pessoa6" type="Sprite" parent="Pessoas"]
+position = Vector2( 264, 144 )
+rotation = -3.99855
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+frame = 1
+
+[node name="Pessoa7" type="Sprite" parent="Pessoas"]
+position = Vector2( 216, 176 )
+rotation = 2.6145
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+
+[node name="Pessoa8" type="Sprite" parent="Pessoas"]
+position = Vector2( 48, 88 )
+rotation = -1.54985
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+
+[node name="Pessoa9" type="Sprite" parent="Pessoas"]
+position = Vector2( 272, 88 )
+rotation = 1.52891
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+frame = 2
+
+[node name="Pessoa10" type="Sprite" parent="Pessoas"]
+position = Vector2( 248, 24 )
+rotation = 0.652753
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 2
+
+[node name="Ringue" type="Area2D" parent="."]
+collision_mask = 192
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AreaRingue" type="CollisionShape2D" parent="Ringue"]
+position = Vector2( 160, 88 )
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+
+[node name="RingueSprite" type="Sprite" parent="Ringue"]
+position = Vector2( 160, 88 )
+texture = ExtResource( 4 )
+
+[node name="Jogador" parent="." instance=ExtResource( 2 )]
+position = Vector2( 104, 88 )
+
+[node name="Inimigo" parent="." instance=ExtResource( 1 )]
+position = Vector2( 216, 88 )
+
+[node name="LimiteIA" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 128
+
+[node name="AreaLimiteIA" type="CollisionShape2D" parent="LimiteIA"]
+position = Vector2( 160, 88 )
+shape = SubResource( 2 )
+
+[node name="Tempo" type="Label" parent="."]
+margin_left = 280.0
+margin_right = 310.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 3 )
+text = "60"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fim" type="Label" parent="."]
+visible = false
+margin_left = 136.0
+margin_top = 64.0
+margin_right = 178.0
+margin_bottom = 106.0
+custom_fonts/font = SubResource( 3 )
+text = "K.O!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Apostas" parent="." instance=ExtResource( 8 )]
+
+[node name="TimerAposta" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="TimerTerminou" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+[connection signal="area_exited" from="Ringue" to="." method="_on_saiu_do_ringue"]
+[connection signal="area_entered" from="LimiteIA" to="." method="_on_entrou_limite_ia"]
+[connection signal="area_exited" from="LimiteIA" to="." method="_on_saiu_limite_ia"]
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
+[connection signal="timeout" from="TimerAposta" to="." method="_on_TimerAposta_timeout"]
+[connection signal="timeout" from="TimerTerminou" to="." method="_on_TimerTerminou_timeout"]
